@@ -4,7 +4,7 @@
     </div>
     <div class="row m-3">
         <div class="col">
-           <img src="https://images.dog.ceo/breeds/bouvier/n02106382_2105.jpg"
+           <img [src]="dog.message"
                 width="200px"
                 class="shadow rounded"
            />
@@ -12,12 +12,14 @@
     </div>
     <div class="row m-3">
         <div class="col">
-            Bouvier
+          <span *ngFor="let name of getName()">
+            {{name | titlecase}}
+          </span>
         </div>
     </div>
     <div class="row m-3">
         <div class="col">
-            <button class="btn btn-primary">Novo Dog</button>
+            <button class="btn btn-primary" (click)="gerar()">Novo Dog</button>
         </div>
     </div>
 </div>
